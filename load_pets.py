@@ -2,7 +2,8 @@ import sqlite3 as lite
 import sys
 
 # call database
-con = lite.connect('pets.db')
+con = lite.connect('pets')
+# con = lite.connect('pets.db') //if above con is not working ex)sqlite3.DatabaseError: file is not a database
 # connect with lateset vesion of sqlite
 with con:
     cur = con.cursor()
@@ -24,7 +25,5 @@ with con:
     cur.execute("INSERT INTO Person_Pet VALUES(3,5)")
     cur.execute("INSERT INTO Person_Pet VALUES(4,6)")
 
-    '''
-        #2 question What is the purpose of the ​person_pet​ table?
-        person_pet  table is make link person and pet table matching primary key
-    '''
+    # 2 question What is the purpose of the ​person_pet​ table?
+    # person_pet table is make link person and pet table matching primary key
